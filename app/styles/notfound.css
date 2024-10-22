@@ -1,0 +1,18 @@
+.not-found {
+  height: calc(100vh - 125px);
+  width: 100%;
+  display: grid;
+  place-content: center;
+  text-align: center; }
+  .not-found h1 {
+    font-size: 125px;
+    margin: 0; }
+  .not-found p {
+    font-size: 1.728rem;
+    margin-top: 0; }
+  .not-found span {
+    font-family: var(--font-kanit);
+    font-style: italic;
+    font-weight: 100; }
+
+/*# sourceMappingURL=notfound.css.map */

@@ -1,0 +1,19 @@
+.nav-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px; }
+  .nav-filter ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    .nav-filter ul li {
+      display: inline-block;
+      padding-right: 15px; }
+      .nav-filter ul li a {
+        text-decoration: none;
+        color: #FFFFFF;
+        font-size: 1rem; }
+
+/*# sourceMappingURL=navfilter.css.map */

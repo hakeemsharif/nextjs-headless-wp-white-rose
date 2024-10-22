@@ -1,0 +1,76 @@
+.about-section {
+  margin-bottom: 30px; }
+  .about-section .content {
+    font-family: var(--font-kanit); }
+  .about-section .sports-card {
+    filter: brightness(10%);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../assets/images/about-sports.jpg"); }
+  .about-section .entertainment-card {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../assets/images/about-entertainment.jpg"); }
+  .about-section .fashion-card {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../assets/images/about-fashion.jpg"); }
+  .about-section .cards {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 35px;
+    margin-bottom: 20px;
+    filter: grayscale(100%);
+    border-radius: 10px; }
+    .about-section .cards h2 {
+      text-transform: uppercase; }
+    .about-section .cards p {
+      font-family: var(--font-kanit); }
+
+.founder-card-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 25px; }
+  .founder-card-list .founder-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px; }
+    .founder-card-list .founder-card .card-filter {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: grid;
+      place-items: bottom;
+      background: linear-gradient(180deg, rgba(217, 217, 217, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+      z-index: 1; }
+      .founder-card-list .founder-card .card-filter h1 {
+        font-size: 2.074rem;
+        color: white;
+        text-align: center;
+        padding-top: 20%;
+        margin: 0; }
+      .founder-card-list .founder-card .card-filter span {
+        color: white;
+        text-align: center;
+        padding-bottom: 30px;
+        font-family: var(--font-kanit);
+        font-style: italic;
+        text-transform: uppercase;
+        font-size: 0.833rem; }
+    .founder-card-list .founder-card img {
+      border-radius: 10px;
+      display: block;
+      width: 100%;
+      object-fit: cover;
+      transition: filter 0.3s ease, transform 0.3s ease; }
+
+@media screen and (min-width: 1401px) {
+  .cards h2 {
+    width: 800px; } }
+@media screen and (max-width: 1400px) {
+  .cards {
+    flex-wrap: wrap; } }
+@media screen and (max-width: 1100px) {
+  .founder-card-list {
+    grid-template-columns: repeat(1, minmax(auto, 1fr)); } }
+
+/*# sourceMappingURL=aboutpage.css.map */

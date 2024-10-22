@@ -1,0 +1,28 @@
+.latest-section .latest-card-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(auto, 1fr));
+  grid-gap: 25px; }
+  .latest-section .latest-card-list .latest-card {
+    gap: 24px;
+    overflow: hidden; }
+    .latest-section .latest-card-list .latest-card img {
+      filter: grayscale(100%);
+      border-radius: 10px;
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      margin-bottom: 25px;
+      transition: filter 0.3s ease, transform 0.3s ease; }
+    .latest-section .latest-card-list .latest-card img:hover {
+      filter: grayscale(0%);
+      transform: scale(1.05);
+      transition: filter 0.3s ease, transform 0.3s ease; }
+    .latest-section .latest-card-list .latest-card span {
+      font-family: var(--font-kanit); }
+    .latest-section .latest-card-list .latest-card p {
+      font-size: 2.074rem;
+      margin-top: 20px; }
+
+/*# sourceMappingURL=latest.css.map */

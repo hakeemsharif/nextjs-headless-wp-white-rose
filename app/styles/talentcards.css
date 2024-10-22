@@ -1,0 +1,46 @@
+.talent-card-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 25px; }
+  .talent-card-list .talent-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px; }
+    .talent-card-list .talent-card .card-filter {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: grid;
+      place-items: bottom;
+      background: linear-gradient(180deg, rgba(217, 217, 217, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+      z-index: 1; }
+      .talent-card-list .talent-card .card-filter h1 {
+        color: white;
+        text-align: center;
+        padding: 20px; }
+    .talent-card-list .talent-card img {
+      filter: grayscale(100%);
+      border-radius: 10px;
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 10 / 13;
+      object-fit: cover;
+      transition: filter 0.3s ease, transform 0.3s ease; }
+    .talent-card-list .talent-card img:hover {
+      filter: grayscale(0%);
+      transform: scale(1.05);
+      transition: filter 0.3s ease, transform 0.3s ease; }
+
+@media screen and (max-width: 1450px) {
+  .card-filter h1 {
+    font-size: 1.2rem; } }
+@media screen and (max-width: 1100px) {
+  .talent-card-list {
+    grid-template-columns: repeat(2, minmax(auto, 1fr)); } }
+@media screen and (max-width: 650px) {
+  .talent-card-list {
+    grid-template-columns: repeat(2, minmax(auto, 1fr)); } }
+
+/*# sourceMappingURL=talentcards.css.map */

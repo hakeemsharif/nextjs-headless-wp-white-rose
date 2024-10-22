@@ -1,0 +1,164 @@
+.talent-sections {
+  margin-bottom: 30px; }
+
+.talent-profile-section {
+  display: grid;
+  grid-template-columns: auto 1fr; }
+  .talent-profile-section .talent-image img {
+    width: 500px;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 10 / 13;
+    display: block;
+    border-radius: 10px; }
+  .talent-profile-section .talent-info {
+    padding: 10px 60px; }
+    .talent-profile-section .talent-info .talent-header {
+      margin-bottom: 10px;
+      border-bottom: 2px solid #FFFFFF;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center; }
+      .talent-profile-section .talent-info .talent-header h1 {
+        font-size: 1.728rem;
+        text-transform: uppercase;
+        font-weight: unset; }
+      .talent-profile-section .talent-info .talent-header .social-links img {
+        padding: 0 10px; }
+    .talent-profile-section .talent-info .talent-details {
+      margin-top: 30px; }
+      .talent-profile-section .talent-info .talent-details .container {
+        display: flex;
+        align-items: center;
+        font-family: var(--font-kanit);
+        margin-bottom: 10px; }
+        .talent-profile-section .talent-info .talent-details .container span {
+          width: 80px;
+          padding-top: 3px;
+          margin-right: 20px;
+          text-transform: uppercase;
+          font-style: italic;
+          font-size: 0.833rem; }
+        .talent-profile-section .talent-info .talent-details .container h3 {
+          text-transform: uppercase;
+          margin: 0; }
+        .talent-profile-section .talent-info .talent-details .container .content {
+          padding-top: 15px;
+          padding-right: 15px;
+          white-space: pre-line;
+          overflow: auto;
+          height: 310px; }
+
+.athlete-career-section .athlete-career-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(auto, 1fr));
+  grid-gap: 10px;
+  place-items: center;
+  text-align: center; }
+  .athlete-career-section .athlete-career-stats .stat-card {
+    padding: 15px 0; }
+    .athlete-career-section .athlete-career-stats .stat-card h2 {
+      font-size: 2.986rem;
+      margin: 0; }
+    .athlete-career-section .athlete-career-stats .stat-card span {
+      padding-top: 10px;
+      font-family: var(--font-kanit);
+      text-transform: uppercase; }
+
+.talent-cover-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(auto, 1fr));
+  justify-content: center;
+  place-items: center;
+  gap: 15px; }
+  .talent-cover-list .cover-card {
+    width: 100%;
+    overflow: hidden; }
+    .talent-cover-list .cover-card .image-container {
+      position: relative;
+      width: 100%;
+      height: auto;
+      padding-top: 130%;
+      overflow: hidden;
+      border-radius: 10px; }
+  .talent-cover-list img {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    transition: transform 0.3s ease; }
+  .talent-cover-list img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease; }
+  .talent-cover-list .cover-card span {
+    display: block;
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-family: var(--font-kanit); }
+
+.talent-gallery-list {
+  width: 100%;
+  margin: 0 auto;
+  columns: 3 400px;
+  column-gap: 15px; }
+  .talent-gallery-list img {
+    display: block;
+    margin-bottom: 15px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px; }
+
+@media screen and (max-width: 1500px) {
+  .talent-profile-section .talent-info .talent-header {
+    display: grid;
+    justify-content: center;
+    align-items: center; }
+    .talent-profile-section .talent-info .talent-header h1 {
+      margin-bottom: 10px; }
+    .talent-profile-section .talent-info .talent-header .social-links {
+      text-align: center; }
+    .talent-profile-section .talent-info .talent-header .social-links img {
+      padding: 15px 10px; }
+
+  .talent-cover-list {
+    grid-template-columns: repeat(3, minmax(auto, 1fr)); }
+    .talent-cover-list .cover-card {
+      width: 90%; }
+      .talent-cover-list .cover-card .image-container {
+        width: 100%;
+        height: auto; } }
+@media screen and (max-width: 1250px) {
+  .talent-profile-section {
+    grid-template-columns: 1fr; }
+    .talent-profile-section .talent-image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+      border-radius: 10px; }
+    .talent-profile-section .talent-info {
+      padding: 10px 0; }
+      .talent-profile-section .talent-info .talent-details {
+        margin-top: 30px; }
+        .talent-profile-section .talent-info .talent-details .container .content {
+          overflow: unset;
+          height: auto; } }
+@media screen and (max-width: 1100px) {
+  .athlete-career-section .athlete-career-stats {
+    grid-template-columns: repeat(2, minmax(auto, 1fr)); } }
+@media screen and (max-width: 900px) {
+  .talent-cover-list {
+    grid-template-columns: 1fr; }
+    .talent-cover-list .cover-card {
+      width: 100%; }
+      .talent-cover-list .cover-card .image-container {
+        width: 100%;
+        height: auto; } }
+@media screen and (max-width: 400px) {
+  .athlete-career-section .athlete-career-stats {
+    grid-template-columns: repeat(1, minmax(auto, 1fr)); } }
+
+/*# sourceMappingURL=talentpage-slug.css.map */

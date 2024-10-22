@@ -1,0 +1,29 @@
+.contact-card-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(auto, 1fr));
+  grid-gap: 25px; }
+  .contact-card-list .contact-card {
+    display: grid;
+    place-items: center;
+    padding: 50px;
+    text-align: center; }
+    .contact-card-list .contact-card h1 {
+      font-size: 2.074rem;
+      margin: 0; }
+    .contact-card-list .contact-card span {
+      font-family: var(--font-kanit); }
+
+@media screen and (max-width: 1150px) {
+  .contact-card-list {
+    grid-template-columns: repeat(2, minmax(auto, 1fr)); } }
+@media screen and (max-width: 660px) {
+  .contact-card-list .contact-card h1 {
+    font-size: 1.44rem;
+    margin: 0; }
+  .contact-card-list .contact-card span {
+    font-family: var(--font-kanit); } }
+@media screen and (max-width: 475px) {
+  .contact-card-list {
+    grid-template-columns: repeat(1, minmax(auto, 1fr)); } }
+
+/*# sourceMappingURL=contact.css.map */
