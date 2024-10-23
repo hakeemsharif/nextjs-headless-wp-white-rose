@@ -16,7 +16,7 @@ const nextConfig = {
           },
           {
             protocol: "https",
-            hostname: "orangered-cat-220974.hostingersite.com",
+            hostname: process.env.HOST_WP_URL,
             port: "",
           },
         ],
