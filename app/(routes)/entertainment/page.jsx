@@ -11,6 +11,11 @@ import '@/app/styles/talentcards.css'
 export default async function Entertainment() {
 
   const res = await fetch(`${process.env.WP_URL}/artist?&_embed=true`);
+
+  if (!res.ok) {
+    return <p>Failed to Fetch Data</p>;
+  }
+  
   const data = await res.json();
 
   return (

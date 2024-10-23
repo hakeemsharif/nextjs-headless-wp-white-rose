@@ -14,6 +14,11 @@ const nextConfig = {
             hostname: "white-rose.local",
             port: "",
           },
+          {
+            protocol: "https",
+            hostname: "orangered-cat-220974.hostingersite.com",
+            port: "",
+          },
         ],
       },
 };
