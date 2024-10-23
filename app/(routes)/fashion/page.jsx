@@ -10,7 +10,7 @@ export default async function Fashion() {
     
     const res = await fetch(`${process.env.WP_URL}/model?&_embed=true`, {
       next: {
-        revalidate: 10
+        revalidate: 24 * 60 * 60 // 24 hours × 60 minutes × 60 seconds
       }
     });
     const data = await res.json();

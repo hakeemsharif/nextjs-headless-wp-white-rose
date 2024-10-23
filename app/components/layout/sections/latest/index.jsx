@@ -5,7 +5,11 @@ import { Link } from 'next-view-transitions'
 
 async function getLatestData() {
 
-    const res = await fetch(`${process.env.WP_URL}/posts?&_embed=true`);
+    const res = await fetch(`${process.env.WP_URL}/posts?&_embed=true`, {
+        next: {
+            revalidate: 60 // 60 seconds
+          }
+    });
     
     if (!res.ok) {
         throw new Error('Failed to fetch data')

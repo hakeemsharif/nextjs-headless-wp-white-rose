@@ -17,7 +17,11 @@ import athlete8 from "@/app/assets/images/athlete8.png"
 
 export default async function Sports() {
 
-  const res = await fetch(`${process.env.WP_URL}/athlete?&_embed=true`);
+  const res = await fetch(`${process.env.WP_URL}/athlete?&_embed=true`, {
+    next: {
+      revalidate: 24 * 60 * 60 // 24 hours × 60 minutes × 60 seconds
+    }
+  });
   const data = await res.json();
     
   // const athletes = [

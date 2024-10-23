@@ -10,7 +10,11 @@ import '@/app/styles/talentcards.css'
 
 export default async function Entertainment() {
 
-  const res = await fetch(`${process.env.WP_URL}/artist?&_embed=true`);
+  const res = await fetch(`${process.env.WP_URL}/artist?&_embed=true`, {
+    next: {
+      revalidate: 24 * 60 * 60 // 24 hours × 60 minutes × 60 seconds
+    }
+  });
 
   if (!res.ok) {
     return <p>Failed to Fetch Data</p>;
