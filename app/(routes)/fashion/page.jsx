@@ -8,7 +8,11 @@ import '@/app/styles/talentcards.css'
 
 export default async function Fashion() {
     
-    const res = await fetch(`${process.env.WP_URL}/model?&_embed=true`);
+    const res = await fetch(`${process.env.WP_URL}/model?&_embed=true`, {
+      next: {
+        revalidate: 10
+      }
+    });
     const data = await res.json();
 
   return (
