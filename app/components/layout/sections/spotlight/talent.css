@@ -47,7 +47,8 @@
     text-align: center;
     justify-content: center; }
     .spotlight-section .main-spotlight .spotlight-content h1 {
-      font-size: 80px;
-      text-align: center; } }
+      font-size: 50px;
+      text-align: center;
+      padding: 0 10px; } }
 
 /*# sourceMappingURL=talent.css.map */
