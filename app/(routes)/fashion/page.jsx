@@ -13,19 +13,20 @@ export default async function Fashion() {
         revalidate: 24 * 60 * 60 // 24 hours × 60 minutes × 60 seconds
       }
     });
+    
     const data = await res.json();
 
   return (
     <section className='group-section'>
 
-    <title>White Rose | Models</title>
+      <title>White Rose | Models</title>
 
-    <div className="section-header">
-        <h1>Models</h1>
-        <span className="section-border"></span>
-    </div>
+      <div className="section-header">
+          <h1>Models</h1>
+          <span className="section-border"></span>
+      </div>
 
-    <TalentCards category={'fashion'} data={data} />
+      <TalentCards category={'fashion'} data={data} />
 
   </section>
   )

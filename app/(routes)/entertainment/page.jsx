@@ -16,9 +16,9 @@ export default async function Entertainment() {
     }
   });
 
-  if (!res.ok) {
-    return <p>Failed to Fetch Data</p>;
-  }
+  // if (!res.ok) {
+  //   return <p>Failed to Fetch Data</p>;
+  // }
   
   const data = await res.json();
 

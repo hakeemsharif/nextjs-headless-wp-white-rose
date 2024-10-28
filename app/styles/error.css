@@ -1,0 +1,22 @@
+.error-page {
+  height: calc(100vh - 125px);
+  width: 100%;
+  display: grid;
+  place-content: center;
+  text-align: center; }
+  .error-page h1 {
+    font-size: 60px;
+    margin: 0;
+    margin-bottom: 10px; }
+  .error-page button {
+    background: none;
+    border-radius: 20px;
+    border: 1px solid white;
+    margin: 0 35%;
+    color: inherit;
+    padding: 10px 20px;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit; }
+
+/*# sourceMappingURL=error.css.map */

@@ -6,9 +6,9 @@ export default async function AboutPage() {
 
     const res = await fetch(`${process.env.WP_URL}/pages/80?acf_format=standard`);
     
-    if (!res.ok) {
-        return <p>Failed to Fetch Data</p>;
-    }
+    // if (!res.ok) {
+    //     return <Error />;
+    // }
       
     const data = await res.json();
     const { acf } = data;
