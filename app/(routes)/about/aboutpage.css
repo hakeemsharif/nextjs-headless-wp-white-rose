@@ -21,6 +21,7 @@
     filter: grayscale(100%);
     border-radius: 10px; }
     .about-section .cards h2 {
+      font-weight: unset;
       text-transform: uppercase; }
     .about-section .cards p {
       font-family: var(--font-kanit); }
@@ -47,7 +48,8 @@
         color: white;
         text-align: center;
         padding-top: 20%;
-        margin: 0; }
+        margin: 0;
+        font-weight: unset; }
       .founder-card-list .founder-card .card-filter span {
         color: white;
         text-align: center;

@@ -5,6 +5,8 @@
     display: flex;
     flex-direction: column;
     text-align: center; }
+    .main-newsletter .newsletter-email h2 {
+      font-weight: unset; }
     .main-newsletter .newsletter-email span {
       margin-bottom: 10px;
       text-transform: uppercase;

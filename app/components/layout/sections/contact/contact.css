@@ -9,7 +9,8 @@
     text-align: center; }
     .contact-card-list .contact-card h1 {
       font-size: 2.074rem;
-      margin: 0; }
+      margin: 0;
+      font-weight: unset; }
     .contact-card-list .contact-card span {
       font-family: var(--font-kanit); }
 

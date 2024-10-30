@@ -41,7 +41,8 @@
         padding: 20px 0; }
       .latest-card-list .news-card .news-content h1 {
         margin: 0;
-        font-size: 1.728rem; }
+        font-size: 1.728rem;
+        font-weight: unset; }
       .latest-card-list .news-card .news-content span {
         font-family: var(--font-kanit); }
 

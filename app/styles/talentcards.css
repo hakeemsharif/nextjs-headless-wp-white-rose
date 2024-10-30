@@ -18,7 +18,8 @@
       .talent-card-list .talent-card .card-filter h1 {
         color: white;
         text-align: center;
-        padding: 20px; }
+        padding: 20px;
+        font-weight: unset; }
     .talent-card-list .talent-card img {
       filter: grayscale(100%);
       border-radius: 10px;
