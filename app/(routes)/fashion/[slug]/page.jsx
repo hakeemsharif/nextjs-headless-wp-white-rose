@@ -1,56 +1,52 @@
-import React from 'react'
+import React from "react";
 
 // COMPONENTS
-import TalentProfileSection from '@/app/components/common/TalentProfileSection';
-import CoverSection from '@/app/components/common/CoverSection';
-import GallerySection from '@/app/components/common/GallerySection';
-import NotFound from './not-found';
+import TalentProfileSection from "@/app/components/common/TalentProfileSection";
+import CoverSection from "@/app/components/common/CoverSection";
+import GallerySection from "@/app/components/common/GallerySection";
+import NotFound from "./not-found";
 // COMPONENTS
 
 // STYLE
-import '@/app/styles/talentpage-slug.css'
+import "@/app/styles/talentpage-slug.css";
 // STYLE
 
 export async function generateStaticParams() {
   const res = await fetch(`${process.env.WP_URL}/model?&_embed=true`);
-  const data = await res.json()
+  const data = await res.json();
 
   return data.map((data) => ({
-    slug: data.slug
-  }))
+    slug: data.slug,
+  }));
 }
 
-export default async function ModelPage({params}) {
+export default async function ModelPage({ params }) {
+  const res = await fetch(
+    `${process.env.WP_URL}/model?slug=${params.slug}?&_embed=true`
+  );
 
-     const res = await fetch(`${process.env.WP_URL}/model?slug=${params.slug}?&_embed=true`);
-    // const data = await res.json();
+  if (!res.ok) {
+    return <p>Failed to Fetch Data</p>;
+  }
 
-    if (!res.ok) {
-      return <p>Failed to Fetch Data</p>;
-    }
-  
-    const data = await res.json();
-  
-    if (!data || data.length === 0) {
-      return <NotFound />;
-    }
-  
+  const data = await res.json();
+
+  if (!data || data.length === 0) {
+    return <NotFound />;
+  }
+
   return (
-    <section className='group-section'>
-
-    {/* <title>White Rose | {data[0].acf.fullname}</title> */}
-
-    <div className="section-header">
+    <section className="group-section">
+      <div className="section-header">
         <h1>Model</h1>
         <span className="section-border"></span>
-    </div>
+      </div>
 
-    <div className="artist-details">
-        <TalentProfileSection data={data}/>
-        {/* <CareerSection data={data}/> */}
-        <CoverSection data={data}/>
-        <GallerySection data={data}/>
-    </div>
-</section>
-  )
+      <div className="artist-details">
+        <TalentProfileSection data={data} />
+        <CoverSection data={data} />
+        <GallerySection data={data} />
+      </div>
+    </section>
+  );
 }

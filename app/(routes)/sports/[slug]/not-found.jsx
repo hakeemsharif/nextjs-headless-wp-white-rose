@@ -1,5 +1,5 @@
-import '@/app/styles/notfound.css'
- 
+import "@/app/styles/notfound.css";
+
 export default async function NotFound() {
   return (
     <div className="not-found">
@@ -7,5 +7,5 @@ export default async function NotFound() {
       <p>We can’t find the page you’re looking for.</p>
       <span>Sorry for the inconvenience.</span>
     </div>
-  )
+  );
 }

@@ -40,12 +40,3 @@ export default function Filter({data}) {
     </div>
   )
 }
-
-// OG
-//  <ul>
-//     <li><Link href="/sports">All</Link></li>
-//     <li><Link href="/sports">Basketball</Link></li>
-//     <li><Link href="/sports">Football</Link></li>
-//     <li><Link href="/sports">Formula 1</Link></li>
-//     <li><Link href="/sports">Tennis</Link></li>
-// </ul> 
