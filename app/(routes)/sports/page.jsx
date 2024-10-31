@@ -15,10 +15,10 @@ export default async function Sports() {
 
   const data = await res.json();
   
-  for (const post of data) {
-    const imageUrl = post._embedded["wp:featuredmedia"][0].source_url;
-    post.blurDataURL = await getBase64(imageUrl);
-  }
+  // for (const post of data) {
+  //   const imageUrl = post._embedded["wp:featuredmedia"][0].source_url;
+  //   post.blurDataURL = await getBase64(imageUrl);
+  // }
   
   return (
     <section className="group-section">
