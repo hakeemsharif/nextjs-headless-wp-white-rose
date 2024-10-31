@@ -1,5 +1,6 @@
 import React from "react";
 import "./aboutpage.css";
+import getBase64 from "@/app/lib/getLocalBase64";
 import Image from "next/image";
 
 export default async function AboutPage() {
@@ -8,6 +9,10 @@ export default async function AboutPage() {
   const data = await res.json();
   const { acf } = data;
 
+  // Hardcoded for now
+  const founderOne = await getBase64(acf.founder_one_image);
+  const founderTwo = await getBase64(acf.second_founder_image);
+  
   return (
     <section className="group-section">
       <title>White Rose | About</title>
@@ -46,7 +51,8 @@ export default async function AboutPage() {
               width={1000}
               height={500}
               quality={100}
-              priority
+              placeholder="blur"
+              blurDataURL={founderOne}
             />
           </div>
 
@@ -62,7 +68,8 @@ export default async function AboutPage() {
               width={1000}
               height={500}
               quality={100}
-              priority
+              placeholder="blur"
+              blurDataURL={founderTwo}
             />
           </div>
         </div>

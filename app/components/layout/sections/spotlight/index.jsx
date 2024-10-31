@@ -1,6 +1,8 @@
 import Image from "next/image";
 import "./talent.css";
-import Link from "next/link";
+// import Link from "next/link";
+import { Link } from "next-view-transitions";
+import getBase64 from "@/app/lib/getLocalBase64";
 
 async function getFeatured() {
   const res = await fetch(`${process.env.WP_URL}/featured?acf_format=standard`);
@@ -13,6 +15,8 @@ async function getFeatured() {
 }
 export default async function Spotlight() {
   const data = await getFeatured();
+  const myBlurDataUrl = await getBase64(data[0]?.acf?.spotlight_image);
+  
 
   return (
     <section>
@@ -48,12 +52,15 @@ export default async function Spotlight() {
 
             </div>
             <div className="image-container">
+              
               <Image
                 src={featured.acf.spotlight_image}
                 alt="UYRK"
                 width={2000}
                 height={2000}
                 quality={100}
+                placeholder="blur"
+                blurDataURL={myBlurDataUrl}
               />
             </div>
           </div>

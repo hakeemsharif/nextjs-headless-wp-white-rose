@@ -1,4 +1,5 @@
 import React from "react";
+import getBase64 from "@/app/lib/getLocalBase64";
 
 // COMPONENTS
 import TalentCards from "@/app/components/common/TalentCards";
@@ -15,11 +16,16 @@ export default async function Entertainment() {
     },
   });
 
-  // if (!res.ok) {
-  //   return <p>Failed to Fetch Data</p>;
-  // }
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
 
   const data = await res.json();
+  
+  for (const post of data) {
+    const imageUrl = post._embedded["wp:featuredmedia"][0].source_url;
+    post.blurDataURL = await getBase64(imageUrl);
+  }
 
   return (
     <section className="group-section">

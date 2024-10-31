@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Link } from "next-view-transitions";
+
 import "@/app/styles/newscard.css";
 
 export default function NewsCards({ data }) {
@@ -19,7 +20,8 @@ export default function NewsCards({ data }) {
                   width={1000}
                   height={400}
                   quality={100}
-                  priority
+                  placeholder="blur"
+                  blurDataURL={news.blurDataURL}
                 />
               </div>
 

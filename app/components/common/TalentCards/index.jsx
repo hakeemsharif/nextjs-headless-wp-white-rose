@@ -3,6 +3,8 @@ import Image from "next/image";
 import "@/app/styles/talentcards.css";
 
 export default function TalentCards({ data, category }) {
+
+  
   return (
     <div className="talent-card-list">
       {data
@@ -23,7 +25,8 @@ export default function TalentCards({ data, category }) {
                 width={500}
                 height={500}
                 quality={100}
-                priority
+                placeholder="blur"
+                blurDataURL={talent.blurDataURL}
               />
             </div>
           </Link>

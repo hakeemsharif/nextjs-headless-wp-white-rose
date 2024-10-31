@@ -1,10 +1,25 @@
 import Image from "next/image";
+import getBase64 from "@/app/lib/getLocalBase64";
 
-export default function CoverSection({ data }) {
+export default async function CoverSection({ data }) {
   const { acf } = data[0];
-  const covers = acf?.photo_gallery?.magazine_cover[0] || [];
+  // const covers = acf?.photo_gallery?.magazine_cover[0] || [];
+  let covers = acf?.photo_gallery?.magazine_cover[0] || [];
 
   if (covers == "") {
+    return null;
+  }
+
+  // Generate blurDataURL for each cover image if not empty
+  // ChatGPT Assist
+  if (covers !== "") {
+    covers = await Promise.all(
+      covers.map(async (cover) => ({
+        ...cover,
+        blurDataURL: await getBase64(cover.full_image_url),
+      }))
+    );
+  } else {
     return null;
   }
 
@@ -24,6 +39,8 @@ export default function CoverSection({ data }) {
                 alt={cover.title || "Magazine Cover"}
                 width={500}
                 height={650}
+                placeholder="blur"
+                blurDataURL={cover?.blurDataURL}
               />
             </div>
             <span>{cover.title}</span>

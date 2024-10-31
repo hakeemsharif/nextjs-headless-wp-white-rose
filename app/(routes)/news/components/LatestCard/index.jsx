@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Link } from "next-view-transitions";
+
 import "./latestcard.css";
 export default function LatestCard({ data }) {
   return (
@@ -18,7 +19,8 @@ export default function LatestCard({ data }) {
                   width={1000}
                   height={400}
                   quality={100}
-                  priority
+                  placeholder="blur"
+                  blurDataURL={news.blurDataURL}
                 />
               </div>
 

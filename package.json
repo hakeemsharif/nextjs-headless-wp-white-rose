@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@plaiceholder/next": "^3.0.0",
     "moment": "^2.30.1",
     "next": "14.2.15",
     "next-video": "^1.2.0",
