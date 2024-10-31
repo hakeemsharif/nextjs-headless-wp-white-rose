@@ -10,8 +10,8 @@ export default async function AboutPage() {
   const { acf } = data;
 
   // Hardcoded for now
-  const founderOne = await getBase64(acf.founder_one_image);
-  const founderTwo = await getBase64(acf.second_founder_image);
+  // const founderOne = await getBase64(acf.founder_one_image);
+  // const founderTwo = await getBase64(acf.second_founder_image);
   
   return (
     <section className="group-section">
@@ -51,8 +51,8 @@ export default async function AboutPage() {
               width={1000}
               height={500}
               quality={100}
-              placeholder="blur"
-              blurDataURL={founderOne}
+              // placeholder="blur"
+              // blurDataURL={founderOne}
             />
           </div>
 
@@ -68,8 +68,8 @@ export default async function AboutPage() {
               width={1000}
               height={500}
               quality={100}
-              placeholder="blur"
-              blurDataURL={founderTwo}
+              // placeholder="blur"
+              // blurDataURL={founderTwo}
             />
           </div>
         </div>
