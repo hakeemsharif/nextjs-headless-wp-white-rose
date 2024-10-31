@@ -20,8 +20,8 @@ export default function NewsCards({ data }) {
                   width={1000}
                   height={400}
                   quality={100}
-                  placeholder="blur"
-                  blurDataURL={news.blurDataURL}
+                  // placeholder="blur"
+                  // blurDataURL={news.blurDataURL}
                 />
               </div>
 

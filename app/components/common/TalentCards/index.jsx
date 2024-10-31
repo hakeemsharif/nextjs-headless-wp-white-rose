@@ -25,8 +25,8 @@ export default function TalentCards({ data, category }) {
                 width={500}
                 height={500}
                 quality={100}
-                placeholder="blur"
-                blurDataURL={talent.blurDataURL}
+                // placeholder="blur"
+                // blurDataURL={talent.blurDataURL}
               />
             </div>
           </Link>
