@@ -15,7 +15,7 @@ async function getFeatured() {
 }
 export default async function Spotlight() {
   const data = await getFeatured();
-  const myBlurDataUrl = await getBase64(data[0]?.acf?.spotlight_image);
+  // const myBlurDataUrl = await getBase64(data[0]?.acf?.spotlight_image);
   
 
   return (
@@ -59,8 +59,8 @@ export default async function Spotlight() {
                 width={2000}
                 height={2000}
                 quality={100}
-                placeholder="blur"
-                blurDataURL={myBlurDataUrl}
+                // placeholder="blur"
+                // blurDataURL={myBlurDataUrl}
               />
             </div>
           </div>

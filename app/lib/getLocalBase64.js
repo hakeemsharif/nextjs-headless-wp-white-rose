@@ -12,8 +12,6 @@ export default async function getBase64(imageUrl) {
 
         const { base64 } = await getPlaiceholder(Buffer.from(buffer))
 
-        //console.log(`base64: ${base64}`)
-
         return base64
 
     } catch (e) {
