@@ -3,7 +3,6 @@ import Image from "next/image";
 import "@/app/styles/talentcards.css";
 
 export default function TalentCards({ data, category }) {
-
   
   return (
     <div className="talent-card-list">
