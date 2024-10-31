@@ -11,26 +11,26 @@ async function getLatestData() {
     },
   });
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
-  return res.json();
-
   // if (!res.ok) {
   //   throw new Error("Failed to fetch data");
   // }
 
-  // const data = await res.json();
+  // return res.json();
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  const data = await res.json();
 
   // Map through the data to add blur data URL to each item
   // AI ASSIST
-  // for (const post of data) {
-  //   const imageUrl = post._embedded["wp:featuredmedia"][0].source_url;
-  //   post.blurDataURL = await getBase64(imageUrl);
-  // }
+  for (const post of data) {
+    const imageUrl = post._embedded["wp:featuredmedia"][0].source_url;
+    post.blurDataURL = await getBase64(imageUrl);
+  }
 
-  // return data;
+  return data;
   
 }
 
@@ -60,8 +60,8 @@ export default async function Latest() {
                       width={1000}
                       height={400}
                       quality={100}
-                      // placeholder="blur"
-                      // blurDataURL={news.blurDataURL}
+                      placeholder="blur"
+                      blurDataURL={news.blurDataURL}
                     />
                   </div>
 
