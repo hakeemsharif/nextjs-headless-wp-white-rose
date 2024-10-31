@@ -1,6 +1,5 @@
-import getBase64 from "@/app/lib/getLocalBase64";
-
 // COMPONENTS
+import getBase64 from "@/app/lib/getLocalBase64";
 import TalentCards from "@/app/components/common/TalentCards";
 // COMPONENTS
 
@@ -21,11 +20,11 @@ export default async function Fashion() {
 
   const data = await res.json();
   
-  // for (const post of data) {
-  //   const imageUrl = post._embedded["wp:featuredmedia"][0].source_url;
-  //   post.blurDataURL = await getBase64(imageUrl);
-  // }
-  
+  for (const post of data) {
+    const imageUrl = post._embedded["wp:featuredmedia"][0].source_url;
+    post.blurDataURL = await getBase64(imageUrl);
+  }
+
   return (
     <section className="group-section">
       <title>White Rose | Models</title>
