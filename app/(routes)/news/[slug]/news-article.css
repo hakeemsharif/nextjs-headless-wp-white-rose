@@ -17,13 +17,13 @@
       position: absolute;
       inset: 0;
       z-index: 0;
-      -webkit-backdrop-filter: blur(500px);
+      -webkit-backdrop-filter: blur(50px);
       /* Better performance on iOS */
-      backdrop-filter: blur(500px);
+      backdrop-filter: blur(50px);
       /* Modern approach */
-      -webkit-filter: blur(500px);
+      -webkit-filter: blur(50px);
       /* Fallback */
-      filter: blur(500px);
+      filter: blur(50px);
       transform: translate3d(0, 0, 0);
       -webkit-transform: translate3d(0, 0, 0);
       width: 100%;
