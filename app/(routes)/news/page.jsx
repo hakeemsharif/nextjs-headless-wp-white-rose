@@ -3,7 +3,7 @@ import LatestCard from "./components/LatestCard";
 import NewsCards from "@/app/components/common/NewsCards";
 import getBase64 from "@/app/lib/getLocalBase64";
 
-export default async function NewsPage() {
+async function getAllNews() {
   const res = await fetch(`${process.env.WP_URL}/posts?&_embed=true`, {
     next: {
       revalidate: 60, // 60 seconds
@@ -14,12 +14,22 @@ export default async function NewsPage() {
     throw new Error("Failed to fetch data");
   }
 
+  // return res.json();
   const data = await res.json();
-  
-  // for (const post of data) {
-  //   const imageUrl = post._embedded["wp:featuredmedia"][0].source_url;
-  //   post.blurDataURL = await getBase64(imageUrl);
-  // }
+
+  // Generate blurDataURL for each item
+  // ChatGPT assist
+  const dataWithBlur = await Promise.all(
+    data.map(async (item) => ({
+      ...item,
+      blurDataURL: await getBase64(item._embedded["wp:featuredmedia"][0].source_url),
+    }))
+  );
+
+  return dataWithBlur;
+}
+export default async function NewsPage() {
+  const data = await getAllNews();
 
   return (
     <section className="group-section">

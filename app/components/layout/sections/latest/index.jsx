@@ -15,22 +15,19 @@ async function getLatestData() {
     throw new Error("Failed to fetch data");
   }
 
-  return res.json();
+  // return res.json();
+  const data = await res.json();
 
-  // if (!res.ok) {
-  //   throw new Error("Failed to fetch data");
-  // }
+  // Generate blurDataURL for each item
+  // ChatGPT assist
+  const dataWithBlur = await Promise.all(
+    data.map(async (image) => ({
+      ...image,
+      blurDataURL: await getBase64(image._embedded["wp:featuredmedia"][0].source_url),
+    }))
+  );
 
-  // const data = await res.json();
-
-  // Map through the data to add blur data URL to each item
-  // AI ASSIST
-  // for (const post of data) {
-  //   const imageUrl = post._embedded["wp:featuredmedia"][0].source_url;
-  //   post.blurDataURL = await getBase64(imageUrl);
-  // }
-
-  // return data;
+  return dataWithBlur;
   
 }
 
@@ -60,8 +57,9 @@ export default async function Latest() {
                       width={1000}
                       height={400}
                       quality={100}
-                      // placeholder="blur"
-                      // blurDataURL={news.blurDataURL}
+                      priority
+                      placeholder="blur"
+                      blurDataURL={news.blurDataURL} 
                     />
                   </div>
 

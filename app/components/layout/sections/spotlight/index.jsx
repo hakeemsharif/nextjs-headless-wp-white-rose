@@ -11,11 +11,23 @@ async function getFeatured() {
     throw new Error("Failed to fetch data");
   }
 
-  return res.json();
+  // return res.json();
+  const data = await res.json();
+
+  // Generate blurDataURL for each item
+  // ChatGPT assist
+  const dataWithBlur = await Promise.all(
+    data.slice(0, 1).map(async (item) => ({
+      ...item,
+      blurDataURL: await getBase64(item.acf.spotlight_image),
+    }))
+  );
+
+  return dataWithBlur;
 }
+
 export default async function Spotlight() {
   const data = await getFeatured();
-  // const myBlurDataUrl = await getBase64(data[0]?.acf?.spotlight_image);
 
   return (
     <section>
@@ -48,18 +60,16 @@ export default async function Spotlight() {
                   </Link>
                 </span>
               </div>
-
             </div>
             <div className="image-container">
-              
               <Image
                 src={featured.acf.spotlight_image}
                 alt="UYRK"
                 width={2000}
                 height={2000}
                 quality={100}
-                // placeholder="blur"
-                // blurDataURL={myBlurDataUrl}
+                placeholder="blur"
+                blurDataURL={featured.blurDataURL}
               />
             </div>
           </div>
