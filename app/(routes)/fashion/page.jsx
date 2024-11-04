@@ -1,13 +1,8 @@
-// COMPONENTS
 import getBase64 from "@/app/lib/getLocalBase64";
 import TalentCards from "@/app/components/common/TalentCards";
-// COMPONENTS
-
-// STYLE
 import "@/app/styles/talentcards.css";
-// STYLE
 
-export default async function Fashion() {
+async function getModel() {
   const res = await fetch(`${process.env.WP_URL}/model?&_embed=true`, {
     next: {
       revalidate: 24 * 60 * 60, // 24 hours × 60 minutes × 60 seconds
@@ -20,10 +15,19 @@ export default async function Fashion() {
 
   const data = await res.json();
   
-  // for (const post of data) {
-  //   const imageUrl = post._embedded["wp:featuredmedia"][0].source_url;
-  //   post.blurDataURL = await getBase64(imageUrl);
-  // }
+  const dataWithBlur = await Promise.all(
+    data.map(async (item) => ({
+      ...item,
+      blurDataURL: await getBase64(item._embedded["wp:featuredmedia"][0]?.media_details?.sizes?.full.source_url),
+    }))
+  );
+
+  return dataWithBlur;
+
+}
+export default async function Fashion() {
+
+  const data = await getModel();
 
   return (
     <section className="group-section">
