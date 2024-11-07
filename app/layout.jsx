@@ -52,7 +52,10 @@ export const metadata = {
   appleWebApp: {
     title: 'White Rose',
     statusBarStyle: 'default'
-  }
+  },
+  other: {
+    "generator": "WordPress", // This adds a WordPress generator meta tag
+  },
 };
 
 export default function RootLayout({ children }) {
