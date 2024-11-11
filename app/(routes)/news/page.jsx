@@ -4,11 +4,7 @@ import NewsCards from "@/app/components/common/NewsCards";
 import getBase64 from "@/app/lib/getLocalBase64";
 
 async function getAllNews() {
-  const res = await fetch(`${process.env.WP_URL}/posts?&_embed=true`, {
-    next: {
-      revalidate: 60, // 60 seconds
-    },
-  });
+  const res = await fetch(`${process.env.WP_URL}/posts?&_embed=true`);
   
   if (!res.ok) {
     throw new Error("Failed to fetch data");

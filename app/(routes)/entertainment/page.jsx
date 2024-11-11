@@ -4,11 +4,7 @@ import TalentCards from "@/app/components/common/TalentCards";
 import "@/app/styles/talentcards.css";
 
 async function getArtist() {
-  const res = await fetch(`${process.env.WP_URL}/artist?&_embed=true`, {
-    next: {
-      revalidate: 24 * 60 * 60, // 24 hours × 60 minutes × 60 seconds
-    },
-  });
+  const res = await fetch(`${process.env.WP_URL}/artist?&_embed=true`);
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
