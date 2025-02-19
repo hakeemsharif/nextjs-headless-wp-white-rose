@@ -24,7 +24,7 @@ export default function BannerMessage() {
     <div className="demo-notice" id="demoNotice">
       <span className="notice-icon"></span>
       <p className="notice-message">
-        <b>DISCLAMER: </b>This is a demo website created to my showcase web
+        <b>DISCLAMER: </b>This is a demo website created to showcase my web
         development and design skills. All content and services shown here are
         for demonstration purposes only.
       </p>
