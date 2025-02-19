@@ -1,6 +1,7 @@
 // UI Imports start
 import Navbar from "./components/layout/navbar";
 import Footer from "./components/layout/footer";
+import BannerMessage from "./components/common/BannerMessage";
 // UI Imports end
 
 import { Kanit } from 'next/font/google'
@@ -67,6 +68,7 @@ export default function RootLayout({ children }) {
           <Navbar />
           {children}
           <Footer />
+          <BannerMessage />   
         </body>
       </html>
     </ViewTransitions>
